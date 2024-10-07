@@ -103,6 +103,6 @@ A estrutura do projeto favorece a criação de componentes pequenos e reutilizá
 
 ## Considerações Finais
 
-- A aplicação utiliza Local Storage para persistência de dados. Em um ambiente de produção, considere usar uma solução mais robusta.
-- O design é responsivo, mas recomenda-se testes adicionais em diversos dispositivos.
+- A aplicação utiliza Local Storage para persistência de dados.
+- O design é responsivo.
 - A arquitetura foi pensada para ser escalável, permitindo fácil adição de novas funcionalidades no futuro.
