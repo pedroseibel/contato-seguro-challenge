@@ -2,6 +2,8 @@
 
 Este projeto é uma aplicação CRUD para gerenciamento de livros e autores, desenvolvida como parte do desafio técnico da Contato Seguro.
 
+![Screenshot da Aplicação](https://raw.githubusercontent.com/pedroseibel/contato-seguro-challenge/refs/heads/main/public/application-screenshot.png)
+
 ## Tecnologias Utilizadas
 
 - React
