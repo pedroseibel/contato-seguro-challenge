@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 export const PageContainer = styled.div`
   padding: 20px;
+
+  @media (min-width: 768px) {
+    max-width: 800px; // Ajuste este valor conforme necessário
+    margin: 0 auto;
+    padding: 0;
+  }
 `;
 
 export const PageHeader = styled.div`
