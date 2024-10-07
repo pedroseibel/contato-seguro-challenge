@@ -93,7 +93,7 @@ Hooks personalizados, como `useLocalStorage`, encapsulam lógicas complexas e pr
 
 ### Tipagem Forte
 
-O uso de TypeScript proporciona uma camada adicional de segurança e autocompletar, reduzindo erros em tempo de desenvolvimento.
+O uso de TypeScript proporciona uma camada adicional de segurança, reduzindo erros e otimizando o tempo de desenvolvimento.
 
 ### Componentização
 
@@ -104,7 +104,3 @@ A estrutura do projeto favorece a criação de componentes pequenos e reutilizá
 - A aplicação utiliza Local Storage para persistência de dados. Em um ambiente de produção, considere usar uma solução mais robusta.
 - O design é responsivo, mas recomenda-se testes adicionais em diversos dispositivos.
 - A arquitetura foi pensada para ser escalável, permitindo fácil adição de novas funcionalidades no futuro.
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT.
