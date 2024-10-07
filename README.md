@@ -67,27 +67,21 @@ Os arquivos compilados estarão no diretório `dist`.
 - Persistência em Local Storage
 - Design responsivo
 
-## Estilo de Código e Linting
 
-Este projeto utiliza ESLint para linting de código. Para executar o linter:
+## Design patterns e Considerações de Engenharia
 
-npm run lint
+### Composition pattern
 
-
-## Padrões de Projeto e Considerações de Engenharia
-
-### Padrão de Composição
-
-O projeto faz uso extensivo do padrão de composição, especialmente nos componentes React. Isso permite uma maior flexibilidade e reutilização de código. Por exemplo:
+O projeto faz uso do padrão de composição, especialmente nos componentes React. Isso permite uma maior flexibilidade e reutilização de código. Por exemplo:
 
 - O componente `Modal` é composto por subcomponentes menores, como `ModalOverlay` e `ModalContent`.
 - O `Table` é construído usando composição com componentes como `Th`, `Td`, e `TrBody`.
 
-Este approach facilita a manutenção e extensão dos componentes, permitindo uma melhor separação de responsabilidades.
+Esta abordagem facilita a manutenção e extensão dos componentes, permitindo uma melhor separação de responsabilidades.
 
 ### Gerenciamento de Estado
 
-Utilizamos o Context API do React para gerenciamento de estado global, evitando prop drilling e mantendo um fluxo de dados mais limpo e previsível.
+O Context API do React faz o gerenciamento de estado global, evitando prop drilling e mantendo um fluxo de dados mais limpo e previsível.
 
 ### Hooks Personalizados
 
