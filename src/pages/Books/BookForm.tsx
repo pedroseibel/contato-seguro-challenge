@@ -116,7 +116,7 @@ export const BookForm: React.FC<BookFormProps> = ({
       </FormGroup>
       <div style={{ display: "flex", gap: "8px" }}>
         <Button type="submit">{book ? "Atualizar" : "Novo"} Livro</Button>
-        <Button type="button" onClick={onCancel}>
+        <Button type="button" onClick={onCancel} style={{backgroundColor: "red"}}>
           Cancelar
         </Button>
       </div>

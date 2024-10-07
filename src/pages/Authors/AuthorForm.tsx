@@ -78,7 +78,7 @@ export const AuthorForm: React.FC<AuthorFormProps> = ({
 
       <div style={{ display: "flex", gap: "8px" }}>
         <Button type="submit">{author ? "Atualizar" : "Novo"} Autor</Button>
-        <Button type="button" onClick={onCancel}>
+        <Button type="button" onClick={onCancel} style={{backgroundColor: "red"}}>
           Cancelar
         </Button>
       </div>
