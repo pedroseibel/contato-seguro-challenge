@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
-  overflow-x: auto;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -20,18 +19,37 @@ export const Th = styled.th`
   background-color: #f8f9fa;
   padding: 12px 16px;
   text-align: left;
-  font-weight: 600;
-  color: #495057;
-  border-bottom: 2px solid #dee2e6;
 `;
 
 export const Td = styled.td`
   padding: 12px 16px;
-  border-bottom: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
 `;
 
 export const TrBody = styled.tr`
-  &:hover {
+  &:nth-of-type(even) {
     background-color: #f8f9fa;
+  }
+`;
+
+export const MobileCard = styled.div`
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 16px;
+`;
+
+export const MobileCardItem = styled.div`
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  strong {
+    display: inline-block;
+    margin-right: 8px;
+    font-weight: bold;
   }
 `;

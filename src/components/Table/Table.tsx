@@ -4,7 +4,8 @@ import {
   flexRender,
   ColumnDef,
 } from "@tanstack/react-table";
-import { TableWrapper, StyledTable, Th, Td, TrBody } from "./Table.styles";
+import { TableWrapper, StyledTable, Th, Td, TrBody, MobileCard, MobileCardItem } from "./Table.styles";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 interface TableProps<T extends object> {
   data: T[];
@@ -18,35 +19,53 @@ export function Table<T extends object>({ data, columns }: TableProps<T>) {
     getCoreRowModel: getCoreRowModel(),
   });
 
+  const { width } = useWindowSize();
+  const isMobile = width <= 768;
+
   return (
     <TableWrapper>
-      <StyledTable>
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <Th key={header.id}>
-                  {flexRender(
-                    header.column.columnDef.header,
-                    header.getContext()
-                  )}
-                </Th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
+      {isMobile ? (
+        <>
           {table.getRowModel().rows.map((row) => (
-            <TrBody key={row.id}>
+            <MobileCard key={row.id}>
               {row.getVisibleCells().map((cell) => (
-                <Td key={cell.id}>
+                <MobileCardItem key={cell.id}>
+                  <strong>{cell.column.columnDef.header as string}:</strong>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </Td>
+                </MobileCardItem>
               ))}
-            </TrBody>
+            </MobileCard>
           ))}
-        </tbody>
-      </StyledTable>
+        </>
+      ) : (
+        <StyledTable>
+          <thead>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
+                  <Th key={header.id}>
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext()
+                    )}
+                  </Th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {table.getRowModel().rows.map((row) => (
+              <TrBody key={row.id}>
+                {row.getVisibleCells().map((cell) => (
+                  <Td key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </Td>
+                ))}
+              </TrBody>
+            ))}
+          </tbody>
+        </StyledTable>
+      )}
     </TableWrapper>
   );
 }
