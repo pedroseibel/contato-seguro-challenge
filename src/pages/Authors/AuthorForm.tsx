@@ -18,7 +18,7 @@ const Input = styled.input`
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box
+  box-sizing: border-box;
 `;
 
 const ErrorMessage = styled.span`
@@ -76,11 +76,11 @@ export const AuthorForm: React.FC<AuthorFormProps> = ({
         {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
       </FormGroup>
 
-      <div style={{display: "flex", gap: "8px"}}>
-      <Button type="submit">{author ? "Atualizar" : "Cadastrar"} Autor</Button>
-      <Button type="button" onClick={onCancel}>
-        Cancelar
-      </Button>
+      <div style={{ display: "flex", gap: "8px" }}>
+        <Button type="submit">{author ? "Atualizar" : "Novo"} Autor</Button>
+        <Button type="button" onClick={onCancel}>
+          Cancelar
+        </Button>
       </div>
     </form>
   );

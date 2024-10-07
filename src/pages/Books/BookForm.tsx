@@ -26,7 +26,7 @@ const Select = styled.select`
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box
+  box-sizing: border-box;
 `;
 
 const ErrorMessage = styled.span`
@@ -114,8 +114,8 @@ export const BookForm: React.FC<BookFormProps> = ({
         />
         {errors.pages && <ErrorMessage>{errors.pages.message}</ErrorMessage>}
       </FormGroup>
-      <div style={{display: 'flex', gap: '8px'}}>    
-        <Button type="submit">{book ? "Atualizar" : "Cadastrar"} Livro</Button>
+      <div style={{ display: "flex", gap: "8px" }}>
+        <Button type="submit">{book ? "Atualizar" : "Novo"} Livro</Button>
         <Button type="button" onClick={onCancel}>
           Cancelar
         </Button>
