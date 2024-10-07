@@ -7,8 +7,13 @@ import { Alert } from "../../components/Alert/Alert";
 import { BookForm } from "./BookForm";
 import { Book } from "../../models";
 import { ColumnDef } from "@tanstack/react-table";
-import { PageContainer, PageHeader, PageTitle, SearchContainer, SearchInput } from "./Books.styles";
-
+import {
+  PageContainer,
+  PageHeader,
+  PageTitle,
+  SearchContainer,
+  SearchInput,
+} from "./Books.styles";
 
 export const Books: React.FC = () => {
   const { books, authors, addBook, updateBook, deleteBook } = useBookAuthor();
@@ -56,7 +61,7 @@ export const Books: React.FC = () => {
       {
         header: "Ações",
         cell: ({ row }) => (
-          <div style={{ display: 'flex', gap: '8px'}}>
+          <div style={{ display: "flex", gap: "8px" }}>
             <Button onClick={() => handleViewBook(row.original)}>Ver</Button>
             <Button onClick={() => handleDeleteBook(row.original.id)}>
               Excluir
@@ -80,21 +85,33 @@ export const Books: React.FC = () => {
       isOpen: true,
       onConfirm: () => {
         deleteBook(id);
-        setAlert({ message: "Livro excluído com sucesso", type: "success", isOpen: true });
-      }
+        setAlert({
+          message: "Livro excluído com sucesso",
+          type: "success",
+          isOpen: true,
+        });
+      },
     });
   };
 
   const handleCreateOrUpdateBook = (book: Book) => {
     if (book.id) {
       updateBook(book);
-      setAlert({ message: "Livro atualizado com sucesso", type: "success", isOpen: true });
+      setAlert({
+        message: "Livro atualizado com sucesso",
+        type: "success",
+        isOpen: true,
+      });
     } else {
       addBook(book);
-      setAlert({ message: "Livro criado com sucesso", type: "success", isOpen: true });
+      setAlert({
+        message: "Livro criado com sucesso",
+        type: "success",
+        isOpen: true,
+      });
     }
     setIsModalOpen(false);
-  }
+  };
 
   return (
     <PageContainer>
@@ -102,14 +119,14 @@ export const Books: React.FC = () => {
         <PageTitle>Livros</PageTitle>
       </PageHeader>
       {alert && (
-  <Alert
-    message={alert.message}
-    type={alert.type}
-    isOpen={alert.isOpen}
-    onClose={() => setAlert(null)}
-    onConfirm={alert.onConfirm}
-  />
-)}
+        <Alert
+          message={alert.message}
+          type={alert.type}
+          isOpen={alert.isOpen}
+          onClose={() => setAlert(null)}
+          onConfirm={alert.onConfirm}
+        />
+      )}
       <SearchContainer>
         <SearchInput
           type="text"
@@ -123,11 +140,15 @@ export const Books: React.FC = () => {
             setIsModalOpen(true);
           }}
         >
-          Adicionar Livro
+          Novo Livro
         </Button>
       </SearchContainer>
       <Table data={filteredBooks} columns={columns} />
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={selectedBook ? "Atualizar Livro" : "Adicionar Livro"}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={selectedBook ? "Atualizar Livro" : "Novo Livro"}
+      >
         <BookForm
           book={selectedBook}
           authors={authors}

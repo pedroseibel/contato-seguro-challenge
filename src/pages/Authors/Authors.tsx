@@ -48,7 +48,7 @@ export const Authors: React.FC = () => {
       {
         header: "Ações",
         cell: ({ row }) => (
-          <div style={{display: 'flex', gap: '8px'}}>
+          <div style={{ display: "flex", gap: "8px" }}>
             <Button onClick={() => handleViewAuthor(row.original)}>Ver</Button>
             <Button onClick={() => handleDeleteAuthor(row.original.id)}>
               Excluir
@@ -72,18 +72,30 @@ export const Authors: React.FC = () => {
       isOpen: true,
       onConfirm: () => {
         deleteAuthor(id);
-        setAlert({ message: "Autor excluído com sucesso", type: "success", isOpen: true });
-      }
+        setAlert({
+          message: "Autor excluído com sucesso",
+          type: "success",
+          isOpen: true,
+        });
+      },
     });
   };
 
   const handleCreateOrUpdateAuthor = (author: Author) => {
     if (author.id) {
       updateAuthor(author);
-      setAlert({ message: "Autor atualizado com sucesso", type: "success", isOpen: true });
+      setAlert({
+        message: "Autor atualizado com sucesso",
+        type: "success",
+        isOpen: true,
+      });
     } else {
       addAuthor(author);
-      setAlert({ message: "Autor criado com sucesso", type: "success", isOpen: true });
+      setAlert({
+        message: "Autor criado com sucesso",
+        type: "success",
+        isOpen: true,
+      });
     }
     setIsModalOpen(false);
   };
@@ -94,14 +106,14 @@ export const Authors: React.FC = () => {
         <PageTitle>Autores</PageTitle>
       </PageHeader>
       {alert && (
-  <Alert
-    message={alert.message}
-    type={alert.type}
-    isOpen={alert.isOpen}
-    onClose={() => setAlert(null)}
-    onConfirm={alert.onConfirm}
-  />
-)}
+        <Alert
+          message={alert.message}
+          type={alert.type}
+          isOpen={alert.isOpen}
+          onClose={() => setAlert(null)}
+          onConfirm={alert.onConfirm}
+        />
+      )}
       <SearchContainer>
         <SearchInput
           type="text"
@@ -115,11 +127,15 @@ export const Authors: React.FC = () => {
             setIsModalOpen(true);
           }}
         >
-          Adicionar Autor
+          Novo Autor
         </Button>
       </SearchContainer>
       <Table data={filteredAuthors} columns={columns} />
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={selectedAuthor ? "Atualizar Autor" : "Adicionar Autor"}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={selectedAuthor ? "Atualizar Autor" : "Novo Autor"}
+      >
         <AuthorForm
           author={selectedAuthor}
           onSubmit={handleCreateOrUpdateAuthor}
