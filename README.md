@@ -16,15 +16,15 @@ Este projeto é uma aplicação CRUD para gerenciamento de livros e autores, des
 
 ## Pré-requisitos
 
-- Node.js (v14 ou superior)
+- Node.js (v18 ou superior)
 - npm ou yarn
 
 ## Iniciando o Projeto
 
 1. Clone o repositório:
    ```
-   git clone https://github.com/seu-usuario/desafio-contato-seguro.git
-   cd desafio-contato-seguro
+   git clone https://github.com/seu-usuario/contato-seguro-challenge.git
+   cd contato-seguro-challenge
    ```
 
 2. Instale as dependências:
