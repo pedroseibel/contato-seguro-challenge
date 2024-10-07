@@ -1,9 +1,9 @@
 // src/App.tsx
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Books } from "./pages/Books/Books";
 import { Authors } from "./pages/Authors/Authors";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import { GlobalStyles } from "./styles/globalStyles";
 import { Navbar } from "./components/Navbar/Navbar";
