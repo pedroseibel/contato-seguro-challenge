@@ -39,15 +39,6 @@ Este projeto é uma aplicação CRUD para gerenciamento de livros e autores, des
 
 4. Abra seu navegador e acesse `http://localhost:5173`
 
-## Construindo para Produção
-
-Para criar uma build de produção:
-
-npm run build
-
-
-Os arquivos compilados estarão no diretório `dist`.
-
 ## Estrutura do Projeto
 
 - `src/`: Código-fonte
